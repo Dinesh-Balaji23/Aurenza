@@ -65,16 +65,15 @@ body {
 }
 
 .event-logo {
-    max-width: 320px;
+    max-width: 400px;
     height: auto;
-    filter: drop-shadow(0px 0px 25px red) drop-shadow(0px 0px 40px darkred);
     animation: horrorGlow 1.2s infinite alternate ease-in-out;
 }
 
 @keyframes horrorGlow {
-    0% { filter: drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 30px darkred); transform: scale(1); }
-    50% { filter: drop-shadow(0px 0px 40px red) drop-shadow(0px 0px 60px darkred); transform: scale(1.05); }
-    100% { filter: drop-shadow(0px 0px 20px red) drop-shadow(0px 0px 40px darkred); transform: scale(1); }
+    0% {transform: scale(1); }
+    50% {transform: scale(1.05); }
+    100% { transform: scale(1); }
 }
 
 .join-container {
