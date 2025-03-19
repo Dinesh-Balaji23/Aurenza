@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURENZA '25 - Tech Events</title>
+    <link href="../CSS/Events.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>AURENZA '25</h1>
+        <h2>Non-Technical Events</h2>
+        <div class="events">
+            <div class="event-card">
+                <img src="../Images/dumb charades.jpg" alt="Game Show">
+                <h3>Reels Making - Portal To Viral</h3>
+                <a href="https://forms.gle/pMgk9MdVwTgoVUF18" class="register-btn">Register</a>
+            </div>
+            <div class="event-card">
+                <img src="../Images/video.jpg" alt="Treasure Hunt">
+                <h3>Video Editing - Eleven's Cut: The Power of Editing</h3>
+                <a href="https://forms.gle/SSPBchTha8GiK4nF9" class="register-btn">Register</a>
+            </div>
+            <div class="event-card">
+                <img src="../Images/jam.jpg" alt="Art Attack">
+                <h3>Just A Minute Talk - The Curse of Vecna: Speak or Be Silenced</h3>
+                <a href="https://forms.gle/Tc1MFNHZKaYiuNJb6" class="register-btn">Register</a>
+            </div>
+            <div class="event-card">
+                <img src="../Images/kak.jpg" alt="Game Show">
+                <h3>Treasure Hunt - The Hawkins Hunt</h3>
+                <a href="https://forms.gle/ssk8YSFdPKL3SMES7" class="register-btn">Register</a>
+            </div>
+            <div class="event-card">
+                <img src="../Images/poster.jpeg" alt="Treasure Hunt">
+                <h3>Poster Making - Demogorgon Designs: Fear Meets Art</h3>
+                <a href="https://forms.gle/gstBJQZE3xrJe3ns7" class="register-btn">Register</a>
+            </div>
+            <div class="event-card">
+                <img src="../Images/debate.jpg" alt="Art Attack">
+                <h3>Debate - Myth, Mystery, or Mind Control?</h3>
+                <a href="https://forms.gle/FAp9g4psp2ngLTr5A" class="register-btn">Register</a>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; AURENZA '25. All Rights Reserved</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let buttons = document.querySelectorAll(".event-card a");
+            buttons.forEach(button => {
+                let flicker = true;
+                function flickerEffect() {
+                    if (!button.classList.contains("no-flicker")) {
+                        button.style.opacity = flicker ? "0.5" : "1";
+                        flicker = !flicker;
+                    }
+                }
+                button.addEventListener("mouseenter", function() {
+                    button.classList.add("no-flicker");
+                    button.style.opacity = "1";
+                });
+                button.addEventListener("mouseleave", function() {
+                    button.classList.remove("no-flicker");
+                });
+                setInterval(flickerEffect, 500);
+            });
+            setTimeout(() => {
+                buttons.forEach(button => {
+                    button.style.animation = "buttonGlow 0.5s infinite alternate";
+                });
+            }, 500);
+        });
+    </script>
+</body>
+</html>

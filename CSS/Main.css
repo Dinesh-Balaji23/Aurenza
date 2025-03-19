@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url('../Images/main.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+.overlay {
+    position: relative;
+    z-index: 1;
+    padding-bottom: 50px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    padding: 20px 0;
+    position: relative;
+}
+
+.header img {
+    height: 120px;
+    transition: transform 0.3s ease-in-out;
+}
+
+#College {
+    height: 150px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.header img:hover {
+    transform: scale(1.1);
+}
+
+.header-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0px 0px 10px red, 0px 0px 20px darkred;
+    animation: flicker 1.5s infinite alternate;
+}
+
+@keyframes flicker {
+    0% { text-shadow: 0px 0px 10px red, 0px 0px 20px darkred; }
+    50% { text-shadow: 0px 0px 15px #ff0000, 0px 0px 30px #8b0000; }
+    100% { text-shadow: 0px 0px 5px red, 0px 0px 15px darkred; }
+}
+
+.timer-block {
+    width: fit-content;
+    margin: 80px auto;
+    padding: 15px 30px;
+    background: rgba(0, 0, 0, 0.8);
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffcc00;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px #ffcc00;
+}
+
+.events-section {
+    margin-top: 50px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    animation: flicker 1.5s infinite alternate;
+}
+
+.events-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.event-card {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    width: 280px;
+    text-align: center;
+    color: #fff;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.event-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 20px red;
+}
+
+.event-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.contact {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.contact div {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    box-shadow: 0px 0px 10px red;
+}
+
+.footer {
+    margin-top: 40px;
+    background: #111;
+    padding: 15px;
+    text-align: center;
+    color: #ccc;
+    font-size: 1rem;
+}
+
+.footer a {
+    color: red;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.header-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 
+        0px 0px 10px #ff0000, 
+        0px 0px 20px #ff3300, 
+        0px 0px 40px #ff6600, 
+        0px 0px 80px #ff0000;
+    animation: flicker 1.2s infinite alternate;
+}
+
+@keyframes flicker {
+    0% { text-shadow: 
+        0px 0px 5px #ff0000, 
+        0px 0px 10px #ff3300, 
+        0px 0px 15px #ff6600;
+    }
+    50% { text-shadow: 
+        0px 0px 15px #ff3300, 
+        0px 0px 30px #ff6600, 
+        0px 0px 50px #ff0000;
+    }
+    100% { text-shadow: 
+        0px 0px 8px #ff0000, 
+        0px 0px 15px #ff3300, 
+        0px 0px 25px #ff6600;
+    }
+}
+
+.event-card a {
+    font-size: 15px;
+    padding: 15px 30px;
+    background: #ff0000;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    display: inline-block;
+    transition: 0.3s;
+    text-shadow: 0px 0px 5px black;
+    box-shadow: 0px 0px 15px #ff0000, 0px 0px 30px #8b0000;
+    animation: buttonGlow 1.5s infinite alternate;
+}
+
+@keyframes buttonGlow {
+    0% { box-shadow: 
+        0px 0px 10px #ff0000, 
+        0px 0px 20px #ff3300;
+    }
+    50% { box-shadow: 
+        0px 0px 15px #ff3300, 
+        0px 0px 30px #ff6600;
+    }
+    100% { box-shadow: 
+        0px 0px 10px #ff0000, 
+        0px 0px 20px #8b0000;
+    }
+}
+
+.event-card a:hover {
+    background: darkred;
+    box-shadow: 0px 0px 25px #ff0000, 0px 0px 50px #ff3300;
+}
+
+.event-card {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    width: 280px;
+    text-align: center;
+    color: #fff;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.7);
+}
+
+.event-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 30px rgba(255, 0, 0, 1);
+}

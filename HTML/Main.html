@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURENZA '25 - The Tech Vibe</title>
+    <link href="../CSS/Main.css" rel="stylesheet">
+</head>
+<body>
+    <div class="overlay">
+        <div class="header">
+            <img src="../Images/KEC LOGO (2).png" alt="College Logo" id="College">
+            <h1 class="header-title">AURENZA '25</h1>
+            <img src="../Images/RRC LOGO_processed.jpg" alt="Club Logo">
+        </div>
+        <div class="timer-block" id="countdown"></div>
+        <div class="events-section">
+            <h2>EVENTS</h2>
+            <div class="events-container">
+                <div class="event-card">
+                    <img src="../Images/Tech.jpg" alt="Technical Events">
+                    <h3>Technical Events</h3>
+                    <a href="Tech.html">View Details</a>
+                </div>
+                <div class="event-card">
+                    <img src="../Images/Non tech.jpg" alt="Non-Technical Events">
+                    <h3>Non-Technical Events</h3>
+                    <a href="NonTech.html">View Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contact-section">
+        <h2>COORDINATORS</h2>
+        <div class="contact">
+            <div>Harini<br>6379445912</div>
+            <div>Jahaganapathi Sugumar<br>6379613634</div>
+            <div>Bhavatarini<br>9025234340</div>
+            <div>Arulsuriya<br>7397618169</div>
+        </div>
+    </div>
+    <footer class="footer">
+        Follow us on Instagram:
+        <a href="https://www.instagram.com/red.ribbon.club.of.kec/" target="_blank">@red.ribbon.club.of.kec</a>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let buttons = document.querySelectorAll(".event-card a");
+            buttons.forEach(button => {
+                let flicker = true;
+                function flickerEffect() {
+                    if (!button.classList.contains("no-flicker")) {
+                        button.style.opacity = flicker ? "0.5" : "1";
+                        flicker = !flicker;
+                    }
+                }
+                button.addEventListener("mouseenter", function() {
+                    button.classList.add("no-flicker");
+                    button.style.opacity = "1";
+                });
+                button.addEventListener("mouseleave", function() {
+                    button.classList.remove("no-flicker");
+                });
+                setInterval(flickerEffect, 500);
+            });
+            setTimeout(() => {
+                buttons.forEach(button => {
+                    button.style.animation = "buttonGlow 0.5s infinite alternate";
+                });
+            }, 500);
+            function countdown() {
+                const eventDate = new Date("March 29, 2025 09:00:00").getTime();
+                const countdownEl = document.getElementById("countdown");
+                const timer = setInterval(() => {
+                    const now = new Date().getTime();
+                    const distance = eventDate - now;
+                    if (distance < 0) {
+                        countdownEl.innerHTML = "Event has started!";
+                        clearInterval(timer);
+                        return;
+                    }
+                    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                    countdownEl.innerHTML = `Starts at: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+                }, 1000);
+            }
+            countdown();
+        });
+    </script>
+</body>
+</html>
